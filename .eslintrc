@@ -1,0 +1,19 @@
+{
+  "extends": ["semistandard"],
+  "parser": "espree",
+  "parserOptions": {
+    "env": {
+      "node": true
+    },
+    "ecmaFeatures": {
+      "jsx": true,
+      "esversion": 5
+    }
+  },
+  "rules": {
+
+  },
+  "env": {
+    "node": true
+  }
+}
