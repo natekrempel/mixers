@@ -5,7 +5,6 @@ var userArgs = process.argv.slice(2);
 var destination = userArgs[0];
 var styleDirectory = 'Mixers';
 
-var fs = require('fs-extra');
 var path = require('path');
 var spawn = require('child_process').spawn;
 
@@ -22,9 +21,14 @@ var getCurrentDir = function getCurrentDir() {
 };
 
 var copy = function copy(dest) {
-  fs.copy(__dirname + '/stylesheets', dest + '/' + styleDirectory, function (err) {
-    if (err) return console.error(err);
+  var copyDir = spawn('/bin/cp', ['-r', __dirname + '/stylesheets', dest + '/' + styleDirectory]);
+
+  copyDir.stdout.on('data', function (data) {
     console.log('Success! Mixers have been placed in ' + dest + '/' + styleDirectory);
+  });
+
+  copyDir.on('error', function (code) {
+    console.log('Error code: ' + code);
   });
 };
 
