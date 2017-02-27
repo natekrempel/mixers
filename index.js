@@ -1,28 +1,30 @@
 #! /usr/bin/env node
-let userArgs = process.argv.slice(2);
-let destination = userArgs[0];
-let styleDirectory = 'Mixers';
+'use strict';
 
-const fs = require('fs-extra');
-const path = require('path');
-const spawn = require('child_process').spawn;
+var userArgs = process.argv.slice(2);
+var destination = userArgs[0];
+var styleDirectory = 'Mixers';
 
-const getCurrentDir = () => {
-  const currentDir = spawn('/bin/pwd');
+var fs = require('fs-extra');
+var path = require('path');
+var spawn = require('child_process').spawn;
 
-  currentDir.stdout.on('data', (data) => {
+var getCurrentDir = function getCurrentDir() {
+  var currentDir = spawn('/bin/pwd');
+
+  currentDir.stdout.on('data', function (data) {
     copy(data.toString().replace(/[\n\r]/g, ''));
   });
 
-  currentDir.on('error', (code) => {
-    console.log(`Error code: ${code}`);
+  currentDir.on('error', function (code) {
+    console.log('Error code: ' + code);
   });
 };
 
-const copy = (dest) => {
-  fs.copy(`${__dirname}/stylesheets`, `${dest}/${styleDirectory}`, err => {
+var copy = function copy(dest) {
+  fs.copy(__dirname + '/stylesheets', dest + '/' + styleDirectory, function (err) {
     if (err) return console.error(err);
-    console.log(`Success! Mixers have been placed in ${dest}/${styleDirectory}`);
+    console.log('Success! Mixers have been placed in ' + dest + '/' + styleDirectory);
   });
 };
 

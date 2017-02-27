@@ -4,7 +4,7 @@ A set of simple re-usable SASS mixins and functions for any project.
 
 ## Installation
 
-    $ npm install Mixers -g
+    $ npm install -g mixers
 
 
 From now on, cd into the your `scss` directory and simply execute:
