@@ -1,6 +1,6 @@
 {
   "name": "mixers",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A set of simple re-usable SASS mixins and functions for any project.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
