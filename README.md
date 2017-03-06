@@ -7,18 +7,26 @@ A set of simple re-usable SASS mixins and functions for any project.
     $ npm install -g mixers
 
 
-From now on, cd into the your `scss` directory and simply execute:
-
-    $ Mixers
-
-
 ## Usage
 
-TODO: Write usage instructions here
+`cd` into your project where you would like to place the stylesheets:
+
+    $ Mixers install
+
+#### Options
+
+##### Custom Destination `--dest path/to/dir`
+To explicitly set where to place the stylesheets use the `--dest` flag with a relative path to a directory. If the directory does not exist it will be created along with all non-existent directories in the path.
+
+Example:
+
+    $ Mixers install --dest location/relative/to/current/directory
 
 ## Development
 
-TODO: Write something
+TODO:
+- Add command to update stylesheets
+
 
 ## Contributing
 
