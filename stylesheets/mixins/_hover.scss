@@ -1,0 +1,9 @@
+// Wraps hover psuedo class with midernizr touch feature detection class
+
+@mixin hover {
+  .no-touchevents & {
+    &:hover {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+// Vertically centers first child within a container
+// There must only be one child within the container with this mixin applied to it
+
+@mixin vertical-center {
+  &:before{
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.35em;
+  }
+
+  >:first-child {
+    width: 99.5%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
