@@ -2,9 +2,21 @@
 
 A set of simple re-usable SASS mixins and functions for any project.
 
-## Installation
+## Global Installation
 
     $ npm install -g mixers
+
+## Local Installation
+
+    $ npm install mixers --save-dev
+
+  Add script to package.json
+
+  ```json
+  "scripts": {
+    "mixers": "Mixers install path/to/dir"
+  }
+  ```
 
 
 ## Usage
